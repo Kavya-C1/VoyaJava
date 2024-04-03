@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoctorRepositoryImpl implements IDoctorRepository {
+
     @Override
     public void addDoctor(Doctor doctor) {
         //establish a connection
@@ -27,10 +28,9 @@ public class DoctorRepositoryImpl implements IDoctorRepository {
             statement.setInt(3,doctor.getExperience());
             statement.setInt(4,doctor.getRatings());
             statement.setDouble(5,doctor.getFees());
-            //call execute
-            boolean result = statement.execute();
-            System.out.println("One row inserted "+!result);
 
+            boolean result = statement.execute();
+               System.out.println("One row inserted "+!result);
 
         } catch (Exception e) {
            e.printStackTrace();
@@ -57,12 +57,43 @@ public class DoctorRepositoryImpl implements IDoctorRepository {
 
     @Override
     public void deleteDoctor(int doctorId) {
+        try (Connection connection = DoctorDb.OpenConnection();
+             PreparedStatement statement = connection.prepareStatement(Queries.DELETEQUERY);
+        ) {
+            statement.setInt(2, doctorId);
+            int result = statement.executeUpdate();
+            System.out.println("one row deleted " + result);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public Doctor findById(int doctorId) {
-        return null;
+
+        List<Doctor> doctorList;
+        doctorList = new ArrayList<>();
+
+        try (Connection connection = DoctorDb.OpenConnection();
+             PreparedStatement statement = connection.prepareStatement(Queries.FINDBYID);
+             ResultSet resultSet = statement.executeQuery();
+        ) {
+            while (resultSet.next()) {
+                String doctorName = resultSet.getString("doctor_name");
+                String speciality = resultSet.getString("speciality");
+                int experience = resultSet.getInt("experience");
+                int rating = resultSet.getInt("rating");
+                doctorId = resultSet.getInt("doctor_id");
+                double fee = resultSet.getDouble("fee");
+                Doctor doctor = new Doctor(doctorId, doctorName, speciality, fee, rating, experience);
+                 doctorList.add(doctor);
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return (Doctor) doctorList;
     }
 
     @Override
@@ -128,6 +159,7 @@ public class DoctorRepositoryImpl implements IDoctorRepository {
                     doctor.setDoctorId(doctorId);
 
                     doctorList.add(doctor);
+
                 }
 
             }
@@ -153,7 +185,7 @@ public class DoctorRepositoryImpl implements IDoctorRepository {
 
                     String doctorName = resultSet.getString("doctor_name");
                     int ratings = resultSet.getInt("ratings");
-                    int doctorId = resultSet.getInt("doctor_id");
+                    int doctorId = resultSet.getInt("doctorid");
                     double fees = resultSet.getDouble("fees");
                     Doctor doctor = new Doctor();
                     doctor.setDoctorName(doctorName);
@@ -162,7 +194,7 @@ public class DoctorRepositoryImpl implements IDoctorRepository {
                     doctor.setRatings(ratings);
                     doctor.setFees(fees);
                     doctor.setDoctorId(doctorId);
-                    doctorList.add(doctor);
+
                 }
 
             }

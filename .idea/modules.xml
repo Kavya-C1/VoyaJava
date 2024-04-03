@@ -7,13 +7,14 @@
       <module fileurl="file://$PROJECT_DIR$/ExceptionDemos/ExceptionDemos.iml" filepath="$PROJECT_DIR$/ExceptionDemos/ExceptionDemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/InterfaceDemos/InterfaceDemos.iml" filepath="$PROJECT_DIR$/InterfaceDemos/InterfaceDemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaAPIDemos/JavaAPIDemos.iml" filepath="$PROJECT_DIR$/JavaAPIDemos/JavaAPIDemos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaPractice/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/Javademos.iml" filepath="$PROJECT_DIR$/Javademos.iml" />
       <module fileurl="file://$PROJECT_DIR$/Multithread/Multithread.iml" filepath="$PROJECT_DIR$/Multithread/Multithread.iml" />
       <module fileurl="file://$PROJECT_DIR$/OopsDemos/OopsDemos.iml" filepath="$PROJECT_DIR$/OopsDemos/OopsDemos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practice/Practice.iml" filepath="$PROJECT_DIR$/Practice/Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/userapp/UserApp.iml" filepath="$PROJECT_DIR$/userapp/UserApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/UtilDemos/UtilDemos.iml" filepath="$PROJECT_DIR$/UtilDemos/UtilDemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/VoterApp/VoterApp.iml" filepath="$PROJECT_DIR$/VoterApp/VoterApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice/practice.iml" filepath="$PROJECT_DIR$/practice/practice.iml" />
     </modules>
   </component>
 </project>

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JDBCDemos" />
+        <module name="JUnitDemos" />
         <module name="DoctorMavenJDBC" />
         <module name="MavenDemos" />
         <module name="BookMavenJdbc" />

@@ -46,6 +46,11 @@ public class BookDaoImpl implements IBookDao {
         return null;
     }
 
+    @Override
+    public List<Book> findByCategory(String category) throws BookNotFoundException {
+        return null;
+    }
+
     public List<Book> findByLesserPrice(double price) throws BookNotFoundException {
         return null;
     }

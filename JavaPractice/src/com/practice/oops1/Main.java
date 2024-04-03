@@ -1,9 +1,7 @@
-package com.practice.arrays;
+package com.practice.oops1;
 
-public class Greater {
+public class Main {
     public static void main(String[] args) {
-
-
 
     }
 }

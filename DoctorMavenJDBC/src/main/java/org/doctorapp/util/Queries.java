@@ -8,7 +8,7 @@ public class Queries {
             "update doctor set fees=? where doctor_id=?";
 
     public static final String DELETEQUERY =
-            "DELETE FROM DOCTOR where doctor_Id=?";
+            "DELETE FROM DOCTOR where doctor_id=?";
 
     public static final String FINDALLQUERY =
             "SELECT * FROM DOCTOR";
@@ -29,5 +29,5 @@ public class Queries {
             "SELECT * FROM DOCTOR WHERE speciality=? AND doctor_name like ?";
 
     public static final String FINDBYID =
-            "SELECT * FROM DOCTOR WHERE doctor_id?";
+            "SELECT * FROM DOCTOR WHERE doctor_id=?";
 }

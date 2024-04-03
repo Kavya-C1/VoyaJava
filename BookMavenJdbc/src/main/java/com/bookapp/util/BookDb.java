@@ -7,7 +7,7 @@ public class BookDb {
     static Connection connection;
 
     public static Connection openConnection(){
-        String url = "jdbc:mysql://localhost;3306/bookappmaven";
+        String url = "jdbc:mysql://localhost:3306/bookappmaven";
         String username = "root";
         String password = "root";
         try{
